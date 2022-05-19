@@ -5,9 +5,9 @@ services:
     build: ./backend_test
     image: user-back
     environment:
-      - PORT=3005
+      - PORT=3001
     ports:
-      - "3001:3005"
+      - "3001:3001"
 
   user-front:
     build: ./frontend_test
@@ -17,6 +17,6 @@ services:
     # Mesmo que `docker run -i`
     stdin_open: true
     environment:
-      - BACK_URL=http://localhost:3005/sistema
+      - BACK_URL=http://localhost:3001/sistema
     ports:
-      - "8080:80"
+      - "3000:3000"
