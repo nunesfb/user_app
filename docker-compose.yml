@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  user-back:
+    build: ./backend_test
+    image: user-back
+    environment:
+      - PORT=3005
+    ports:
+      - "3001:3005"
+
+  user-front:
+    build: ./frontend_test
+    image: user-front
+    # Mesmo que `docker run -t`
+    tty: true
+    # Mesmo que `docker run -i`
+    stdin_open: true
+    environment:
+      - BACK_URL=http://localhost:3005/sistema
+    ports:
+      - "8080:80"

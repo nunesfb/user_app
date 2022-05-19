@@ -1,0 +1,6 @@
+[submodule "backend_test"]
+	path = backend_test
+	url = https://github.com/nunesfb/backend_test.git
+[submodule "frontend_test"]
+	path = frontend_test
+	url = https://github.com/nunesfb/frontend_test.git
